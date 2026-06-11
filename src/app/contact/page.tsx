@@ -10,7 +10,7 @@ import { company, supportCards } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact irsSMEX support or business for product questions.",
+  description: "Contact irsSMEX for product questions, support, phone, or WhatsApp.",
 };
 
 export default function ContactPage() {
@@ -20,19 +20,30 @@ export default function ContactPage() {
         <Reveal as="section">
           <SectionHeading
             title="Contact irsSMEX"
-            description="Use this page for product support, business inquiries, pricing questions, or policy clarification."
+            description="Use this page for product support, pricing questions, WhatsApp contact, or direct phone and email communication."
           />
           <div className="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="grid gap-4">
               {supportCards.map((item, index) => {
                 const Icon = item.icon;
+                const content = (
+                  <>
+                    <Icon className="h-5 w-5 text-white transition duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(34,211,238,0.55)]" />
+                    <p className="mt-4 text-sm text-[#71717A]">{item.title}</p>
+                    <p className="mt-2 text-sm leading-6 text-zinc-300">{item.value}</p>
+                  </>
+                );
 
                 return (
                   <Reveal key={item.title} delay={index * 100}>
                     <GlowCard className="p-5">
-                      <Icon className="h-5 w-5 text-white transition duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(34,211,238,0.55)]" />
-                      <p className="mt-4 text-sm text-[#71717A]">{item.title}</p>
-                      <p className="mt-2 text-sm leading-6 text-zinc-300">{item.value}</p>
+                      {item.href ? (
+                        <a href={item.href} className="block">
+                          {content}
+                        </a>
+                      ) : (
+                        content
+                      )}
                     </GlowCard>
                   </Reveal>
                 );
@@ -46,13 +57,18 @@ export default function ContactPage() {
                     <Input type="email" placeholder="Email" className="h-11 rounded-md border-white/10 bg-black/50 text-white placeholder:text-zinc-600 transition focus-visible:border-cyan-200/50 focus-visible:ring-cyan-300/20" />
                   </div>
                   <Input placeholder="Company or project" className="mt-4 h-11 rounded-md border-white/10 bg-black/50 text-white placeholder:text-zinc-600 transition focus-visible:border-cyan-200/50 focus-visible:ring-cyan-300/20" />
-                  <Textarea placeholder="How can we help?" className="mt-4 min-h-36 rounded-md border-white/10 bg-black/50 text-white placeholder:text-zinc-600 transition focus-visible:border-cyan-200/50 focus-visible:ring-cyan-300/20" />
+                  <Textarea placeholder="How can we help?" className="mt-4 min-h-32 rounded-md border-white/10 bg-black/50 text-white placeholder:text-zinc-600 transition focus-visible:border-cyan-200/50 focus-visible:ring-cyan-300/20" />
                   <p className="mt-4 text-sm leading-6 text-[#71717A]">
-                    We aim to respond within 2-3 business days. Brand: {company.name}. Location: {company.location}.
+                    Email: {company.supportEmail}. Phone: {company.phoneDisplay}. Brand: {company.name}. Location: {company.location}.
                   </p>
-                  <PremiumButton type="submit" className="mt-5">
-                    Contact Support
-                  </PremiumButton>
+                  <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                    <PremiumButton type="submit">
+                      Contact Support
+                    </PremiumButton>
+                    <PremiumButton href={company.whatsappHref} variant="secondary">
+                      WhatsApp Us
+                    </PremiumButton>
+                  </div>
                 </form>
               </GlowCard>
             </Reveal>

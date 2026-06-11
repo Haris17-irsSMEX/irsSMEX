@@ -9,33 +9,40 @@ const linkClass =
 export function Footer() {
   return (
     <footer className="relative z-10 overflow-hidden border-t border-white/10 bg-[#020204]/92">
-      <div className="absolute left-1/2 top-0 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/40 to-transparent" />
-      <div className="absolute bottom-0 left-1/2 h-72 w-[44rem] -translate-x-1/2 rounded-full bg-cyan-300/8 blur-[100px]" />
-      <div className="premium-shell py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-end">
+      <div className="absolute left-1/2 top-0 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/28 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 h-56 w-[36rem] -translate-x-1/2 rounded-full bg-cyan-300/6 blur-[64px]" />
+      <div className="premium-shell py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-end">
           <Reveal>
             <div>
-              <div className="text-6xl font-semibold tracking-[-0.08em] text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.18)] transition duration-300 hover:drop-shadow-[0_0_46px_rgba(34,211,238,0.30)] sm:text-8xl">
+              <div className="text-5xl font-semibold tracking-[-0.08em] text-white drop-shadow-[0_0_22px_rgba(255,255,255,0.14)] transition duration-300 hover:drop-shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:text-7xl">
                 irsSMEX
               </div>
-              <p className="mt-6 max-w-2xl text-sm leading-7 text-[#A1A1AA] sm:text-base">
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-[#A1A1AA] sm:text-base">
                 {company.description}
               </p>
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-sm text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-lg">
               <p className="text-white">Contact</p>
               <div className="mt-4 grid gap-2">
-                <p>{company.supportEmail}</p>
-                <p>{company.businessEmail}</p>
+                <a href={`mailto:${company.supportEmail}`} className={linkClass}>
+                  {company.supportEmail}
+                </a>
+                <a href={company.phoneHref} className={linkClass}>
+                  {company.phoneDisplay}
+                </a>
+                <a href={company.whatsappHref} className={linkClass}>
+                  WhatsApp
+                </a>
                 <p>{company.location}</p>
               </div>
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 lg:grid-cols-3">
           <Reveal delay={100}>
             <p className="text-sm font-semibold text-white">Company</p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[#71717A]">

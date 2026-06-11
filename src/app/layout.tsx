@@ -4,18 +4,20 @@ import "./globals.css";
 
 import { Footer } from "@/components/site/footer";
 import { GalaxyBackground } from "@/components/site/galaxy-background";
-import { MouseGlow } from "@/components/site/mouse-glow";
+import { MouseGlowShell } from "@/components/site/mouse-glow-shell";
 import { Navbar } from "@/components/site/navbar";
 import { company } from "@/lib/site-content";
 
 const bodyFont = Geist({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const monoFont = Geist_Mono({
   variable: "--font-code",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +38,7 @@ export default function RootLayout({
     <html lang="en" className={`dark ${bodyFont.variable} ${monoFont.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <GalaxyBackground />
-        <MouseGlow />
+        <MouseGlowShell />
         <div className="relative z-10 min-h-screen overflow-x-hidden">
           <Navbar />
           {children}

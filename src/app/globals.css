@@ -179,7 +179,7 @@
   }
 
   .soft-cyan-glow {
-    box-shadow: 0 0 80px rgba(34, 211, 238, 0.18), 0 0 130px rgba(96, 165, 250, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 48px rgba(34, 211, 238, 0.12), 0 0 72px rgba(96, 165, 250, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .premium-dashboard-grid {
@@ -197,8 +197,8 @@
       radial-gradient(circle at 82% 62%, rgba(255,255,255,0.70) 0 1px, transparent 1.6px),
       radial-gradient(circle at 38% 74%, rgba(96,165,250,0.75) 0 1px, transparent 1.5px),
       radial-gradient(circle at 55% 42%, rgba(255,255,255,0.45) 0 0.8px, transparent 1.2px);
-    background-size: 220px 220px, 310px 310px, 420px 420px, 560px 560px, 760px 760px;
-    animation: star-drift 42s linear infinite;
+    background-size: 260px 260px, 360px 360px, 520px 520px, 700px 700px, 920px 920px;
+    animation: star-drift 56s linear infinite;
   }
 
   .starfield-fine {
@@ -206,17 +206,17 @@
       radial-gradient(circle at 12% 18%, rgba(255,255,255,0.44) 0 0.7px, transparent 1px),
       radial-gradient(circle at 44% 68%, rgba(255,255,255,0.35) 0 0.7px, transparent 1px),
       radial-gradient(circle at 84% 36%, rgba(34,211,238,0.32) 0 0.8px, transparent 1.1px);
-    background-size: 130px 130px, 180px 180px, 240px 240px;
-    animation: star-drift-reverse 55s linear infinite;
+    background-size: 180px 180px, 240px 240px, 320px 320px;
+    
   }
 
   .galaxy-grid {
     background-image:
       linear-gradient(rgba(255,255,255,0.11) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.11) 1px, transparent 1px);
-    background-size: 88px 88px;
+    background-size: 104px 104px;
     mask-image: radial-gradient(circle at center, black, transparent 76%);
-    animation: grid-drift 36s linear infinite;
+    animation: grid-drift 52s linear infinite;
   }
 
   .noise-layer {
@@ -227,11 +227,11 @@
   }
 
   .animate-float-slow {
-    animation: float-slow 8s ease-in-out infinite;
+    animation: float-slow 10s ease-in-out infinite;
   }
 
   .animate-orb-drift {
-    animation: orb-drift 18s ease-in-out infinite alternate;
+    animation: orb-drift 24s ease-in-out infinite alternate;
   }
 }
 

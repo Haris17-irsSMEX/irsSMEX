@@ -4,18 +4,17 @@ import {
   CheckCircle2,
   Code2,
   FileCheck2,
-  GitPullRequestArrow,
   Globe2,
   Layers3,
   ListChecks,
   Mail,
   MessageSquare,
   NotebookText,
+  Phone,
   ScanSearch,
   ShieldAlert,
   Sparkles,
   TerminalSquare,
-  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -52,8 +51,11 @@ export const company = {
     "irsSMEX builds practical AI tools that help teams review software, automate workflows, and launch faster with confidence.",
   description:
     "irsSMEX builds practical AI software that helps developers, founders, and modern teams review software, automate workflows, and launch with more confidence.",
-  supportEmail: "support@irssmex.com",
-  businessEmail: "business@irssmex.com",
+  supportEmail: "irssmex@gmail.com",
+  businessEmail: "irssmex@gmail.com",
+  phoneDisplay: "03225868569",
+  phoneHref: "tel:03225868569",
+  whatsappHref: "https://wa.me/923225868569",
   location: "Pakistan",
   legalDate: "June 7, 2026",
 };
@@ -255,8 +257,8 @@ export const vibesafeLimitations = [
 ];
 
 export const supportCards = [
-  { title: "Support", value: company.supportEmail, icon: Mail },
-  { title: "Business", value: company.businessEmail, icon: GitPullRequestArrow },
+  { title: "Email", value: company.supportEmail, href: `mailto:${company.supportEmail}`, icon: Mail },
+  { title: "Phone", value: company.phoneDisplay, href: company.phoneHref, icon: Phone },
+  { title: "WhatsApp", value: company.phoneDisplay, href: company.whatsappHref, icon: MessageSquare },
   { title: "Location", value: company.location, icon: Globe2 },
-  { title: "Response", value: "We aim to respond within 2-3 business days.", icon: FileCheck2 },
 ];
